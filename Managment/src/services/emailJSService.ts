@@ -1,10 +1,10 @@
 import emailjs from '@emailjs/browser';
 
 // EmailJS Configuration
-const EMAILJS_SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID || '';
-const EMAILJS_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID || '';
-const EMAILJS_PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY || '';
-const EMAILJS_PRIVATE_KEY = import.meta.env.VITE_EMAILJS_PRIVATE_KEY || '';
+const EMAILJS_SERVICE_ID = 'service_keq6uts';
+const EMAILJS_TEMPLATE_ID = 'm2KD-rIOQt6GoRA1t';
+const EMAILJS_PUBLIC_KEY = 'gacqATjpaYlYrowdS';
+const EMAILJS_PRIVATE_KEY = 'coWf4GEmW1HYeh1WjO-og';
 
 // Export for easy access
 export const EMAIL_CONFIG = {
