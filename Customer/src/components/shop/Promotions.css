@@ -1,0 +1,192 @@
+/* Promotions.css */
+.promotions-container {
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    font-family: 'Poppins', sans-serif;
+}
+
+.promotions-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.promotions-header h1 {
+    font-size: 32px;
+    font-weight: 800;
+    color: #1a1a1a;
+    margin-bottom: 10px;
+}
+
+.promotions-header p {
+    color: #666;
+    font-size: 16px;
+}
+
+.promotions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 30px;
+}
+
+.promotion-card {
+    background: #fff;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    border: 1px solid #eee;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.promotion-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+}
+
+.promo-banner {
+    height: 180px;
+    background: linear-gradient(135deg, #008000, #7c3aed);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+}
+
+.promo-banner::before {
+    content: '';
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 60%);
+    top: -50%;
+    left: -50%;
+}
+
+.promo-discount {
+    font-size: 48px;
+    font-weight: 900;
+    z-index: 1;
+}
+
+.promo-discount span {
+    font-size: 20px;
+    margin-left: 5px;
+}
+
+.promo-content {
+    padding: 25px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.promo-title {
+    font-size: 20px;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 10px;
+}
+
+.promo-dates {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #6b7280;
+    font-size: 13px;
+    margin-bottom: 15px;
+}
+
+.promo-eligible {
+    margin-bottom: 20px;
+    flex: 1;
+}
+
+.promo-eligible h4 {
+    font-size: 14px;
+    font-weight: 600;
+    color: #374151;
+    margin-bottom: 8px;
+}
+
+.promo-eligible ul {
+    list-style: none;
+    padding: 0;
+}
+
+.promo-eligible li {
+    font-size: 13px;
+    color: #6b7280;
+    margin-bottom: 4px;
+    padding-left: 15px;
+    position: relative;
+}
+
+.promo-eligible li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: #008000;
+}
+
+.promo-actions {
+    display: flex;
+    gap: 12px;
+}
+
+.btn-apply {
+    flex: 2;
+    background: #008000;
+    color: #fff;
+    border: none;
+    padding: 12px;
+    border-radius: 12px;
+    font-weight: 700;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.btn-apply:hover {
+    background: #006400;
+}
+
+.btn-view-products {
+    flex: 1;
+    background: #f3f4f6;
+    color: #374151;
+    border: 1px solid #e5e7eb;
+    padding: 12px;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.btn-view-products:hover {
+    background: #e5e7eb;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .promotions-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .promo-actions {
+        flex-direction: column;
+    }
+
+    .btn-apply,
+    .btn-view-products {
+        width: 100%;
+    }
+
+    .promotions-header h1 {
+        font-size: 24px;
+    }
+}

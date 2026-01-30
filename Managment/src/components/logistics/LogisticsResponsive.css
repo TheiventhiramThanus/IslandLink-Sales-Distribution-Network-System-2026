@@ -1,0 +1,281 @@
+/* LogisticsResponsive.css */
+
+/* Global Reset & Box Sizing */
+* {
+    box-sizing: border-box;
+}
+
+/* 1. Mobile-First Layout & Typography */
+:root {
+    --primary-color: #2563eb;
+    --bg-color: #f9fafb;
+    --card-bg: #ffffff;
+    --border-color: #e5e7eb;
+    --text-main: #111827;
+    --text-muted: #6b7280;
+    --spacing-unit: 16px;
+}
+
+body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    background-color: var(--bg-color);
+    margin: 0;
+    overflow-x: hidden;
+}
+
+/* 2. Centered Container */
+.logistics-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: var(--spacing-unit);
+}
+
+@media (min-width: 1024px) {
+    .logistics-container {
+        padding: 24px;
+    }
+}
+
+/* 3. Header & Page Titles */
+.logistics-header {
+    margin-bottom: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.logistics-title {
+    font-size: 1.5rem;
+    font-weight: 900;
+    color: var(--text-main);
+    line-height: 1.2;
+}
+
+.logistics-subtitle {
+    color: var(--text-muted);
+    font-size: 0.875rem;
+}
+
+@media (min-width: 768px) {
+    .logistics-header {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+
+/* 4. Filters & Search Area */
+.logistics-filters {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 24px;
+    background: var(--card-bg);
+    padding: 16px;
+    border-radius: 16px;
+    border: 1px solid var(--border-color);
+}
+
+.filter-input,
+.filter-select {
+    width: 100%;
+    height: 44px;
+    padding: 0 16px;
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    .logistics-filters {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .filter-input {
+        max-width: 300px;
+    }
+
+    .filter-select {
+        width: auto;
+    }
+}
+
+/* 5. Card Grid (Dashboard, Fleet) */
+.logistics-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+}
+
+@media (min-width: 768px) {
+    .logistics-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .logistics-grid {
+        grid-template-columns: repeat(3, 1fr);
+        /* Or auto-fit */
+    }
+}
+
+.logistics-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s;
+}
+
+/* 6. Responsive Tables (Stacked Cards on Mobile) */
+.logistics-table-container {
+    width: 100%;
+    overflow-x: auto;
+    border-radius: 16px;
+    border: 1px solid var(--border-color);
+    background: var(--card-bg);
+}
+
+.logistics-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.logistics-table th,
+.logistics-table td {
+    padding: 16px;
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.logistics-table th {
+    background: #f9fafb;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--text-muted);
+    font-weight: 700;
+}
+
+/* Mobile Table Strategy */
+@media (max-width: 768px) {
+    .logistics-table thead {
+        display: none;
+    }
+
+    .logistics-table,
+    .logistics-table tbody,
+    .logistics-table tr,
+    .logistics-table td {
+        display: block;
+        width: 100%;
+    }
+
+    .logistics-table tr {
+        margin-bottom: 16px;
+        border: 1px solid var(--border-color);
+        border-radius: 16px;
+        background: var(--card-bg);
+        overflow: hidden;
+    }
+
+    .logistics-table td {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 12px 16px;
+        border-bottom: 1px solid #f3f4f6;
+        font-size: 0.875rem;
+    }
+
+    .logistics-table td::before {
+        content: attr(data-label);
+        font-weight: 700;
+        color: var(--text-muted);
+        font-size: 0.75rem;
+        text-transform: uppercase;
+    }
+
+    /* Actions floating at bottom or inline */
+    .logistics-table td:last-child {
+        justify-content: flex-end;
+        background: #f9fafb;
+        border-top: 1px solid var(--border-color);
+    }
+}
+
+/* 7. Buttons */
+.btn {
+    height: 44px;
+    padding: 0 20px;
+    border-radius: 12px;
+    border: none;
+    font-weight: 600;
+    font-size: 0.875rem;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: white;
+    box-shadow: 0 4px 6px rgba(37, 99, 235, 0.2);
+}
+
+.btn-primary:active {
+    transform: scale(0.98);
+}
+
+.btn-full-mobile {
+    width: 100%;
+}
+
+@media (min-width: 768px) {
+    .btn-full-mobile {
+        width: auto;
+    }
+}
+
+/* 8. Modals / Detail Views */
+.logistics-modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 50;
+    padding: 16px;
+}
+
+.logistics-modal {
+    background: white;
+    width: 100%;
+    max-width: 1100px;
+    max-height: 92vh;
+    border-radius: 20px;
+    overflow-y: auto;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+.modal-header {
+    padding: 24px;
+    border-bottom: 1px solid var(--border-color);
+    position: sticky;
+    top: 0;
+    background: white;
+    z-index: 10;
+    display: flex;
+    justify-content: space-between;
+}
+
+.modal-body {
+    padding: 24px;
+}

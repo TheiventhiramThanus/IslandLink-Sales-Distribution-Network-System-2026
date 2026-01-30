@@ -1,0 +1,337 @@
+/* Dispatch Queue Premium Styles */
+
+.dispatch-queue-container {
+    padding: 2rem;
+    max-width: 1600px;
+    margin: 0 auto;
+    animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.dispatch-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 2rem;
+    gap: 2rem;
+}
+
+.dispatch-title h1 {
+    font-size: 2.25rem;
+    font-weight: 900;
+    color: #111827;
+    letter-spacing: -0.025em;
+    margin-bottom: 0.5rem;
+}
+
+.dispatch-title p {
+    color: #6b7280;
+    font-weight: 500;
+}
+
+/* Filters Section */
+.dispatch-filters {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 24px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+    align-items: center;
+    border: 1px solid #f3f4f6;
+}
+
+.filter-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    flex: 1;
+    min-width: 200px;
+}
+
+.filter-label {
+    font-size: 0.75rem;
+    font-weight: 800;
+    color: #9ca3af;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.filter-input {
+    background: #f9fafb;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 0.75rem 1rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #111827;
+    transition: all 0.2s;
+    outline: none;
+}
+
+.filter-input:focus {
+    border-color: #2563eb;
+    background: white;
+    box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.1);
+}
+
+/* Desktop Table View */
+.dispatch-table-container {
+    background: white;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    border: 1px solid #f3f4f6;
+    display: none;
+    /* Hidden on mobile by default */
+}
+
+@media (min-width: 1024px) {
+    .dispatch-table-container {
+        display: block;
+    }
+}
+
+.dispatch-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.dispatch-table th {
+    background: #f9fafb;
+    padding: 1rem 1.5rem;
+    text-align: left;
+    font-size: 0.75rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #6b7280;
+    border-bottom: 1px solid #f3f4f6;
+}
+
+.dispatch-table td {
+    padding: 1.25rem 1.5rem;
+    border-bottom: 1px solid #f9fafb;
+    vertical-align: middle;
+}
+
+.dispatch-table tr:last-child td {
+    border-bottom: none;
+}
+
+.dispatch-table tr:hover td {
+    background: #fbfcfe;
+}
+
+.order-id-badge {
+    background: #eff6ff;
+    color: #2563eb;
+    padding: 0.25rem 0.625rem;
+    border-radius: 8px;
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 0.025em;
+}
+
+.priority-badge {
+    padding: 0.25rem 0.625rem;
+    border-radius: 8px;
+    font-size: 0.75rem;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+.priority-high {
+    background: #fef2f2;
+    color: #dc2626;
+}
+
+.priority-normal {
+    background: #f0fdf4;
+    color: #16a34a;
+}
+
+/* Mobile Card List View */
+.dispatch-mobile-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+@media (min-width: 1024px) {
+    .dispatch-mobile-list {
+        display: none;
+    }
+}
+
+.order-mobile-card {
+    background: white;
+    border-radius: 20px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    border: 1px solid #f3f4f6;
+}
+
+.mobile-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+}
+
+.mobile-card-actions {
+    display: flex;
+    gap: 0.75rem;
+    margin-top: 1.5rem;
+}
+
+.btn-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.25rem;
+    border-radius: 12px;
+    font-size: 0.875rem;
+    font-weight: 700;
+    transition: all 0.2s;
+    cursor: pointer;
+    border: none;
+    flex: 1;
+}
+
+.btn-view {
+    background: #f3f4f6;
+    color: #4b5563;
+}
+
+.btn-assign {
+    background: #2563eb;
+    color: white;
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
+}
+
+.btn-assign:hover {
+    background: #1d4ed8;
+    transform: translateY(-2px);
+}
+
+/* Standardized Modals are now handled in LogisticsCommon.css */
+
+.section-label {
+    font-size: 0.625rem;
+    font-weight: 800;
+    color: #9ca3af;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.detail-item {
+    margin-bottom: 1.5rem;
+}
+
+.detail-label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #6b7280;
+    margin-bottom: 0.25rem;
+}
+
+.detail-value {
+    font-size: 0.9375rem;
+    font-weight: 700;
+    color: #111827;
+}
+
+.assignment-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.form-label {
+    font-size: 0.8125rem;
+    font-weight: 700;
+    color: #374151;
+}
+
+.form-select,
+.form-textarea {
+    width: 100%;
+    background: #f9fafb;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 0.75rem 1rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #111827;
+    outline: none;
+}
+
+.form-select:focus,
+.form-textarea:focus {
+    border-color: #2563eb;
+    background: white;
+    box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.1);
+}
+
+.no-data {
+    color: #ef4444;
+    font-size: 0.75rem;
+    font-weight: 600;
+    font-style: italic;
+}
+
+.loading-inline {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.75rem;
+    color: #6b7280;
+}
+
+.pulse {
+    width: 8px;
+    height: 8px;
+    background: #2563eb;
+    border-radius: 50%;
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(37, 99, 235, 0.7);
+    }
+
+    70% {
+        transform: scale(1);
+        box-shadow: 0 0 0 10px rgba(37, 99, 235, 0);
+    }
+
+    100% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(37, 99, 235, 0);
+    }
+}

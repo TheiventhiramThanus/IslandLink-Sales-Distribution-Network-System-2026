@@ -1,0 +1,67 @@
+{
+    "drivers": [
+        {
+            "_id": "65b2a1...",
+            "name": "Kamal Perera",
+            "email": "kamal@isdn.com",
+            "role": "driver",
+            "company": "Central",
+            "status": "Active",
+            "approvalStatus": "Approved",
+            "vehicleNumber": "WP-CAB-1234",
+            "vehicleType": "Van"
+        }
+    ],
+    "vehicles": [
+        {
+            "_id": "65b2b2...",
+            "vehicleId": "V-CENTRAL-01",
+            "model": "Toyota Hiace",
+            "licensePlate": "WP-CAB-1234",
+            "type": "Van",
+            "status": "Active",
+            "distributionCenter": "Central"
+        }
+    ],
+    "orders": [
+        {
+            "_id": "65b2c3...",
+            "orderId": "ORD-2026-001",
+            "customer": "City Pharmacy",
+            "address": "123 Main St, Col 07",
+            "status": "Confirmed",
+            "deliveryCenter": "Central",
+            "items": [
+                {
+                    "product": "Protex Soap",
+                    "quantity": 50,
+                    "price": 120
+                }
+            ],
+            "totalAmount": 6000
+        }
+    ],
+    "assignments": [
+        {
+            "_id": "65b2d4...",
+            "assignmentId": "ASN-173782...",
+            "order": "65b2c3...",
+            "driver": "65b2a1...",
+            "vehicle": "65b2b2...",
+            "status": "Assigned",
+            "center": "Central",
+            "assignedAt": "2026-01-25T10:00:00Z"
+        }
+    ],
+    "notifications": [
+        {
+            "_id": "65b2e5...",
+            "recipient": "65b2a1...",
+            "title": "New Delivery Assignment",
+            "message": "You have been assigned to Order #ORD-2026-001",
+            "type": "Assignment",
+            "relatedId": "65b2d4...",
+            "read": false
+        }
+    ]
+}

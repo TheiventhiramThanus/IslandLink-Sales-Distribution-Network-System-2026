@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EmailJS Setup & Test</title>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .container {
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            max-width: 800px;
+            width: 100%;
+            padding: 40px;
+        }
+        
+        h1 {
+            color: #1a202c;
+            margin-bottom: 10px;
+            font-size: 28px;
+        }
+        
+        .subtitle {
+            color: #718096;
+            margin-bottom: 30px;
+        }
+        
+        .alert {
+            padding: 16px;
+            border-radius: 8px;
+            margin-bottom: 24px;
+            border-left: 4px solid;
+        }
+        
+        .alert-info {
+            background: #ebf8ff;
+            border-color: #3182ce;
+            color: #2c5282;
+        }
+        
+        .alert-warning {
+            background: #fef5e7;
+            border-color: #f39c12;
+            color: #7d6608;
+        }
+        
+        .alert-success {
+            background: #f0fdf4;
+            border-color: #10b981;
+            color: #065f46;
+        }
+        
+        .alert-error {
+            background: #fef2f2;
+            border-color: #ef4444;
+            color: #991b1b;
+        }
+        
+        .setup-steps {
+            background: #f7fafc;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 24px;
+        }
+        
+        .setup-steps h3 {
+            color: #2d3748;
+            margin-bottom: 12px;
+        }
+        
+        .setup-steps ol {
+            margin-left: 20px;
+            color: #4a5568;
+            line-height: 1.8;
+        }
+        
+        .setup-steps a {
+            color: #3182ce;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        
+        .setup-steps a:hover {
+            text-decoration: underline;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        label {
+            display: block;
+            color: #2d3748;
+            font-weight: 600;
+            margin-bottom: 8px;
+            font-size: 14px;
+        }
+        
+        input, textarea {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            font-size: 14px;
+            transition: border-color 0.2s;
+        }
+        
+        input:focus, textarea:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+        
+        .help-text {
+            font-size: 12px;
+            color: #718096;
+            margin-top: 4px;
+        }
+        
+        button {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 14px 28px;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            width: 100%;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        
+        button:hover:not(:disabled) {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
+        }
+        
+        button:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+        
+        .result {
+            margin-top: 24px;
+            padding: 16px;
+            border-radius: 8px;
+            display: none;
+        }
+        
+        .result.show {
+            display: block;
+        }
+        
+        .loading {
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            border: 3px solid rgba(255,255,255,.3);
+            border-radius: 50%;
+            border-top-color: white;
+            animation: spin 1s ease-in-out infinite;
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        
+        .config-display {
+            background: #1a202c;
+            color: #68d391;
+            padding: 16px;
+            border-radius: 8px;
+            font-family: 'Courier New', monospace;
+            font-size: 13px;
+            margin-top: 12px;
+            overflow-x: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📧 EmailJS Setup & Test Tool</h1>
+        <p class="subtitle">ISDN Sales Distribution System</p>
+        
+        <div class="alert alert-info">
+            <strong>🔑 Your API Keys (Already Configured):</strong><br>
+            Public Key: <code>uTmEiAcJ2z3qL5yFz</code><br>
+            Private Key: <code>kELnicj7AtBZbtnY0nXOZ</code>
+        </div>
+        
+        <div class="alert alert-warning">
+            <strong>⚠️ Setup Required!</strong><br>
+            You need to complete these steps in the EmailJS dashboard before emails can be sent.
+        </div>
+        
+        <div class="setup-steps">
+            <h3>📋 Quick Setup Guide:</h3>
+            <ol>
+                <li>Go to <a href="https://dashboard.emailjs.com/" target="_blank">EmailJS Dashboard</a> (opens in new tab)</li>
+                <li>Log in or create a free account</li>
+                <li>Click <strong>"Add New Service"</strong> → Choose Gmail or Outlook</li>
+                <li>Connect your email account and copy the <strong>Service ID</strong></li>
+                <li>Click <strong>"Email Templates"</strong> → <strong>"Create New Template"</strong></li>
+                <li>Use this simple template:
+                    <div class="config-display">Hello {{to_name}}!<br><br>{{message}}<br><br>Best regards,<br>{{from_name}}</div>
+                </li>
+                <li>Save and copy the <strong>Template ID</strong></li>
+                <li>Paste both IDs in the form below and test!</li>
+            </ol>
+        </div>
+        
+        <form id="emailForm">
+            <div class="form-group">
+                <label for="serviceId">Service ID *</label>
+                <input 
+                    type="text" 
+                    id="serviceId" 
+                    placeholder="service_xxxxxxx"
+                    required
+                >
+                <div class="help-text">From EmailJS Dashboard → Email Services</div>
+            </div>
+            
+            <div class="form-group">
+                <label for="templateId">Template ID *</label>
+                <input 
+                    type="text" 
+                    id="templateId" 
+                    placeholder="template_xxxxxxx"
+                    required
+                >
+                <div class="help-text">From EmailJS Dashboard → Email Templates</div>
+            </div>
+            
+            <div class="form-group">
+                <label for="toEmail">Your Email Address *</label>
+                <input 
+                    type="email" 
+                    id="toEmail" 
+                    placeholder="your-email@example.com"
+                    required
+                >
+                <div class="help-text">Where you want to receive the test email</div>
+            </div>
+            
+            <div class="form-group">
+                <label for="toName">Your Name *</label>
+                <input 
+                    type="text" 
+                    id="toName" 
+                    placeholder="John Doe"
+                    required
+                >
+            </div>
+            
+            <div class="form-group">
+                <label for="message">Test Message</label>
+                <textarea 
+                    id="message" 
+                    rows="4"
+                    placeholder="This is a test email from the ISDN system..."
+                >This is a test email from the ISDN Sales Distribution System. If you receive this, EmailJS is working correctly!</textarea>
+            </div>
+            
+            <button type="submit" id="submitBtn">
+                <span id="btnText">📧 Send Test Email</span>
+                <span id="btnLoading" style="display: none;"><span class="loading"></span> Sending...</span>
+            </button>
+        </form>
+        
+        <div id="result" class="result"></div>
+    </div>
+    
+    <script>
+        // Initialize EmailJS with your public key
+        emailjs.init('uTmEiAcJ2z3qL5yFz');
+        
+        const form = document.getElementById('emailForm');
+        const result = document.getElementById('result');
+        const submitBtn = document.getElementById('submitBtn');
+        const btnText = document.getElementById('btnText');
+        const btnLoading = document.getElementById('btnLoading');
+        
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            // Get form values
+            const serviceId = document.getElementById('serviceId').value.trim();
+            const templateId = document.getElementById('templateId').value.trim();
+            const toEmail = document.getElementById('toEmail').value.trim();
+            const toName = document.getElementById('toName').value.trim();
+            const message = document.getElementById('message').value.trim();
+            
+            // Show loading state
+            submitBtn.disabled = true;
+            btnText.style.display = 'none';
+            btnLoading.style.display = 'inline';
+            result.classList.remove('show');
+            
+            try {
+                // Send email using EmailJS
+                const response = await emailjs.send(
+                    serviceId,
+                    templateId,
+                    {
+                        to_email: toEmail,
+                        to_name: toName,
+                        from_name: 'ISDN System',
+                        subject: 'Test Email from ISDN',
+                        message: message,
+                        reply_to: 'noreply@isdn.com'
+                    }
+                );
+                
+                console.log('Success:', response);
+                
+                // Show success message
+                result.className = 'result alert alert-success show';
+                result.innerHTML = `
+                    <strong>✅ Success! Email Sent!</strong><br><br>
+                    <strong>Status:</strong> ${response.status} ${response.text}<br>
+                    <strong>Sent to:</strong> ${toEmail}<br><br>
+                    <strong>✨ EmailJS is working correctly!</strong><br>
+                    Check your inbox at <strong>${toEmail}</strong><br><br>
+                    <strong>Next Steps:</strong><br>
+                    1. Save your Service ID: <code>${serviceId}</code><br>
+                    2. Save your Template ID: <code>${templateId}</code><br>
+                    3. Use these IDs in your ISDN application code
+                `;
+                
+            } catch (error) {
+                console.error('Error:', error);
+                
+                // Show error message
+                result.className = 'result alert alert-error show';
+                
+                let errorMessage = error.text || error.message || 'Unknown error';
+                let helpText = '';
+                
+                if (errorMessage.includes('Invalid') || errorMessage.includes('not found')) {
+                    helpText = '<br><br><strong>💡 Common Issues:</strong><br>' +
+                               '• Check your Service ID is correct<br>' +
+                               '• Check your Template ID is correct<br>' +
+                               '• Make sure the email service is connected in EmailJS dashboard<br>' +
+                               '• Verify the template exists and is saved';
+                } else if (errorMessage.includes('public key')) {
+                    helpText = '<br><br><strong>💡 Solution:</strong><br>' +
+                               'Your public key might be incorrect. Check your EmailJS account settings.';
+                }
+                
+                result.innerHTML = `
+                    <strong>❌ Failed to Send Email</strong><br><br>
+                    <strong>Error:</strong> ${errorMessage}
+                    ${helpText}
+                    <br><br>
+                    <strong>🔍 Troubleshooting:</strong><br>
+                    1. Make sure you created an Email Service in EmailJS<br>
+                    2. Make sure you created an Email Template<br>
+                    3. Double-check the Service ID and Template ID<br>
+                    4. Check the browser console for more details
+                `;
+            } finally {
+                // Reset button state
+                submitBtn.disabled = false;
+                btnText.style.display = 'inline';
+                btnLoading.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,9 @@
+🧪 TESTING RESEND API
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+API Key: ✅ Present
+From Email: ISDN System <onboarding@resend.dev>
+To Email: thanust858@gmail.com
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+✅ SUCCESS!
+Result: {"data":null,"error":{"statusCode":401,"name":"validation_error","message":"API key is invalid"},"headers":{"cf-cache-status":"DYNAMIC","cf-ray":"9c3098ea893fce21-SIN","connection":"keep-alive","content-length":"75","content-type":"application/json","date":"Sat, 24 Jan 2026 15:34:51 GMT","server":"cloudflare","www-authenticate":"error=\"invalid_token\""}}

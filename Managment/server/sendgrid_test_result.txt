@@ -1,0 +1,16 @@
+🧪 TESTING SENDGRID API
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+API Key: SG.P7FxcYe...
+From Email: thanust858@gmail.com
+To Email: thanust858@gmail.com
+Template ID: d-1144d69fa59b41ef8029cf1655124390
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📤 Attempting to send with template...
+❌ TEMPLATE FAILED!
+Error: Forbidden
+Response Body: {"errors":[{"message":"The from address does not match a verified Sender Identity. Mail cannot be sent until this error is resolved. Visit https://sendgrid.com/docs/for-developers/sending-email/sender-identity/ to see the Sender Identity requirements","field":"from","help":null}]}
+
+📤 Attempting direct send fallback...
+❌ FALLBACK FAILED!
+Error: Forbidden

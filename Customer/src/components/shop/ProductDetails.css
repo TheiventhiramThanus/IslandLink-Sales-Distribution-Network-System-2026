@@ -1,0 +1,230 @@
+/* Product Details Container */
+.product-details-container {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    min-height: 80vh;
+}
+
+.back-button {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: none;
+    border: none;
+    color: #6b7280;
+    font-weight: 600;
+    font-size: 0.95rem;
+    cursor: pointer;
+    margin-bottom: 2rem;
+    transition: color 0.2s;
+}
+
+.back-button:hover {
+    color: #111827;
+}
+
+/* Main Layout Grid */
+.product-details-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    background: white;
+    border-radius: 24px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    /* Soft, premium shadow */
+    padding: 2rem;
+    border: 1px solid #e5e7eb;
+}
+
+@media (min-width: 900px) {
+    .product-details-layout {
+        grid-template-columns: 1fr 1fr;
+        padding: 3rem;
+    }
+}
+
+/* Product Image Section */
+.product-image-container {
+    width: 100%;
+    height: 400px;
+    background: #f9fafb;
+    border-radius: 16px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #f3f4f6;
+}
+
+.product-image-container img {
+    max-width: 90%;
+    max-height: 90%;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.product-image-container:hover img {
+    transform: scale(1.05);
+}
+
+/* Product Info Section */
+.product-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.category-badge {
+    display: inline-block;
+    padding: 0.35rem 0.75rem;
+    background: #eff6ff;
+    color: #ffcc00;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    border-radius: 99px;
+    letter-spacing: 0.05em;
+    width: fit-content;
+}
+
+.product-name {
+    font-size: 2.25rem;
+    font-weight: 800;
+    color: #111827;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+}
+
+.product-id-sku {
+    display: flex;
+    gap: 1.5rem;
+    font-size: 0.875rem;
+    color: #6b7280;
+    border-bottom: 1px solid #e5e7eb;
+    padding-bottom: 1.5rem;
+}
+
+.price-stock {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 0.5rem;
+}
+
+.detail-price {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #111827;
+}
+
+.stock-status {
+    font-size: 0.875rem;
+    font-weight: 700;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    text-transform: uppercase;
+}
+
+.status-in-stock {
+    background: #ecfdf5;
+    color: #059669;
+}
+
+.status-low-stock {
+    background: #fffbeb;
+    color: #d97706;
+}
+
+.status-out-of-stock {
+    background: #fef2f2;
+    color: #dc2626;
+}
+
+/* Description */
+.product-description-label {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #374151;
+    margin-top: 1rem;
+}
+
+.product-description-text {
+    font-size: 1rem;
+    color: #4b5563;
+    line-height: 1.6;
+}
+
+/* Promotion Badge */
+.promotion-badge-heavy {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    background: linear-gradient(135deg, #4f46e5, #3b82f6);
+    color: white;
+    padding: 1rem;
+    border-radius: 12px;
+    font-weight: 600;
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
+}
+
+/* Unit Size */
+.unit-size-info {
+    font-size: 0.9rem;
+    color: #6b7280;
+    margin-top: 0.5rem;
+}
+
+/* Action Buttons */
+.action-buttons {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.btn-add-to-cart {
+    flex: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    background: #111827;
+    color: white;
+    border: none;
+    padding: 1rem;
+    font-size: 1rem;
+    font-weight: 700;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.btn-add-to-cart:hover:not(:disabled) {
+    background: #000;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.btn-add-to-cart:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    background: #9ca3af;
+}
+
+.btn-back-details {
+    flex: 1;
+    background: white;
+    color: #111827;
+    border: 1px solid #e5e7eb;
+    padding: 1rem;
+    font-size: 1rem;
+    font-weight: 700;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.btn-back-details:hover {
+    background: #f9fafb;
+    border-color: #d1d5db;
+}

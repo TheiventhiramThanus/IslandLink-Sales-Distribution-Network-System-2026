@@ -1,0 +1,12 @@
+[dotenv@17.2.3] injecting env (9) from .env -- tip: ⚙️  suppress all logs with { quiet: true }
+🧪 TESTING EMAILJS REST API (BACKEND)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Service ID: service_keq6uts
+Template ID: m2KD-rIOQt6GoRA1t
+Public Key: gacqATjpaYlYrowdS
+Private Key: ✅ Present
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+❌ FAILED!
+Status: 400
+Data: The template ID not found. To find this ID, visit https://dashboard.emailjs.com/admin/templates
